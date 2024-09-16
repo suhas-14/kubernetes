@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: calci-deployment
+  labels:
+    app: my-app
+spec:
+  template:
+    metadata:
+      name: calci-pod
+      labels:
+        app: my-app
+    spec:
+      containers:
+        - name: calci-pod
+          image: suhas8/cal-app
+  selector:
+    matchLabels:
+      app: my-app
